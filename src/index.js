@@ -27,11 +27,25 @@ const main = async () => {
       return moviesData
     })
 
+    movies.forEach(async movie => {
+      const res = await fetch("http://localhost:3000/movies", {
+            method: "POST",
+            body: JSON.stringify(movie),
+            headers: {
+              "Content-Type":"application/json"
+            }
+          })
+
+      if (res.ok) {
+        console.log("DONE!", movie.title)
+      } else {
+        console.log("ERROR!", movie.title)
+      }
+    })
+
     await page.close()
     await context.close()
     await browser.close()
-
-    console.log("DONE!")
   } catch (error) {
     console.error(error)
   }
