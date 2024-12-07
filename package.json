@@ -1,0 +1,17 @@
+{
+  "name": "netflix",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start":"node src/index.js",
+    "dev":"node --watch src/index.js"
+  },
+  "keywords": ["NETFLIX","SCRAP","TOP10"],
+  "author": "Matías Seltzer",
+  "license": "ISC",
+  "description": "Scrap of Netflix top 10",
+  "dependencies": {
+    "playwright": "^1.49.0"
+  }
+}
